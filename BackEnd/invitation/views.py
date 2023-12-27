@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from BackEnd.invitation.serializers import InvitationSerializer
+
+
+class InvitationCreateView(generics.CreateAPIView):
+    serializer_class = InvitationSerializer
+

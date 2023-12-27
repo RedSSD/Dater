@@ -1,6 +1,5 @@
 from django.db import models
-from time import timezone
-from datetime import timedelta
+from datetime import timedelta, date
 
 
 class Invitation(models.Model):
@@ -8,7 +7,7 @@ class Invitation(models.Model):
     Invitation Model
     """
     id = models.AutoField(primary_key=True)
-    telegram_id = models.CharField(max_length=10, unique=True)
-    expiration_date = models.DateField(default=timezone.now + timedelta(days=2))
-
-
+    name = models.CharField(max_length=30, blank=True, default='Someone')
+    telegram_id = models.CharField(max_length=9, unique=True)
+    token = models.CharField(max_length=64, unique=True)
+    expiration_date = models.DateField(default=date.today() + timedelta(days=2))

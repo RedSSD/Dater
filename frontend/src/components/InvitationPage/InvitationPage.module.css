@@ -1,0 +1,32 @@
+.invitation-container {
+    display: block;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.answer-button {
+    background-color: #FFB6C1;
+    color: white;
+    padding: 15px 64px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}

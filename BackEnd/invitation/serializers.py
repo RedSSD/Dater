@@ -4,4 +4,6 @@ from .models import Invitation
 
 
 class InvitationSerializer(serializers.ModelSerializer):
-    model = Invitation
+
+    class Meta:
+        model = Invitation

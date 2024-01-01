@@ -13,5 +13,3 @@ class InvitationRetrieveAPIView(generics.RetrieveAPIView):
 
 class InvitationCreateAPIView(generics.CreateAPIView):
     serializer_class = InvitationSerializer
-
-

@@ -23,5 +23,3 @@ class Invitation(models.Model):
 
     def __str__(self):
         return f'{self.telegram_id}'
-
-

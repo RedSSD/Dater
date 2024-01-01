@@ -1,6 +1,7 @@
 from rest_framework import generics
 
-from BackEnd.invitation.serializers import InvitationSerializer
+from .models import Invitation
+from .serializers import InvitationSerializer
 
 
 class InvitationRetrieveAPIView(generics.RetrieveAPIView):
@@ -12,4 +13,5 @@ class InvitationRetrieveAPIView(generics.RetrieveAPIView):
 
 class InvitationCreateAPIView(generics.CreateAPIView):
     serializer_class = InvitationSerializer
+
 

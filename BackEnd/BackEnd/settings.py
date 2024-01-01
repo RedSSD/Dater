@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_crontab',
     'invitation',
 ]
 
@@ -99,6 +100,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+CRONJOBS = [
+    ('0 0 * * *', 'invitation.cron.delete_expired_invitations')
 ]
 
 

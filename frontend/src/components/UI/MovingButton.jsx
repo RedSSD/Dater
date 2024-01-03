@@ -1,5 +1,5 @@
-import {useRef, useState} from "react";
-import css from "./InvitationPage.module.css"
+import {useState} from "react";
+import css from "./Button.module.css"
 
 const OFFSET_WIDTH = 19;
 const OFFSET_HEIGHT = 66;

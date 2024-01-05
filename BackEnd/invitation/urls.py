@@ -4,5 +4,5 @@ from .views import InvitationCreateAPIView, InvitationRetrieveAPIView, Invitatio
 
 urlpatterns = [
     path("create/", InvitationCreateAPIView.as_view(), name="create_invitation"),
-    path("/<str:token>", InvitationGetIdAPIView.as_view(), name="")
+    path("<str:token>/", InvitationGetIdAPIView.as_view(), name="")
 ]

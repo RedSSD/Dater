@@ -12,8 +12,12 @@ class InvitationRetrieveAPIView(generics.RetrieveAPIView):
     serializer_class = InvitationSerializer
 
     def retrieve(self, request, *args, **kwargs):
-        # TODO get token, analyze it and send request to bot
-        pass
+        telegram_token = kwargs.get('token')
+        invitation = Invitation.objects.get(token=telegram_token)
+
+        send_telegram_message(invitation.telegram_id, 'agreement')
+
+        return Response({}, status=status.HTTP_200_OK)
 
 
 class InvitationCreateAPIView(generics.CreateAPIView):

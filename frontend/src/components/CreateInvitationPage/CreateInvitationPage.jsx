@@ -1,22 +1,51 @@
+import axios from "axios";
+
 import css from "./CreateInvitationPage.module.css"
-import Button from "../UI/Button";
+import button_style from "../UI/Button"
+import {useRef, useState} from "react";
 
 function CreateInvitationPage(){
 
-    const onCreateButtonClick = () => {
+    const [isCreated, setIsCreated] = useState(false)
+    const [invitationLink, setInvitationLink] = useState("")
+    const inputIdRef = useRef(null);
 
+    const onCreateButtonClick = () => {
+        const telegram_id = inputIdRef.current.value;
+
+        axios.post(`${process.env.REACT_APP_BASE_API_URL}/create/`,
+            {"telegram_id": telegram_id}).then(res => {
+
+            if(res.status === 200)
+                setIsCreated(true);
+                const link = `${process.env.REACT_APP_PUBLIC_URL}` + `/${res.data["token"]}`
+                setInvitationLink(link)
+        })
     }
 
     return (
         <div style={{lineHeight: 50 + "pt"}}>
-            <div className={css["form__group field"]}>
-                <input type="input" className={css["form__field"]} placeholder="Telegram ID" name="TH" id='name'
-                       required/>
-            </div>
-            <Button
-                text="Create"
-                onCLick={onCreateButtonClick}
-            />
+            {!isCreated ?
+                <div>
+                    <div className={css["form__group field"]}>
+                        <input
+                            type="input"
+                            className={css["form__field"]}
+                            placeholder="Telegram ID"
+                            id='telegram_id'
+                            ref={inputIdRef}
+                            required
+                        />
+                    </div>
+                    <button className={button_style['answer-button']} onClick={onCreateButtonClick}>Create</button>
+                </div>
+
+                :
+                <div>
+                    <h2>Your url is</h2>
+                    <a href={invitationLink}>{invitationLink}</a>
+                </div>
+            }
         </div>
 
     )

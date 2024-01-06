@@ -15,4 +15,3 @@ def send_telegram_message(chat_id, text_type):
         {'chat_id': chat_id, 'text': MESSAGE_TEXTS[text_type]}
     )
     return response.json()['ok']
-

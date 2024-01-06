@@ -6,8 +6,8 @@ import Button from "../UI/Button";
 import css from './InvitationPage.module.css'
 
 
-const INVITATION_GIF_LINK = ""//"https://media.giphy.com/media/Js27mGWPIUs9V0mjcd/giphy.gif"
-const RESULT_GIF_LINK = ""//"https://media.giphy.com/media/j594eyQTt0CiRi9zI5/giphy.gif"
+const INVITATION_GIF_LINK = "https://media.giphy.com/media/Js27mGWPIUs9V0mjcd/giphy.gif"
+const RESULT_GIF_LINK = "https://media.giphy.com/media/j594eyQTt0CiRi9zI5/giphy.gif"
 const SUCCESS_TEXT = "YEAAAAHHHHH"
 
 function InvitationPage() {

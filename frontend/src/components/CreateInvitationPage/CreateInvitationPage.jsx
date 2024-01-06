@@ -1,8 +1,9 @@
 import axios from "axios";
+import {useRef, useState} from "react";
 
 import css from "./CreateInvitationPage.module.css"
-import button_style from "../UI/Button"
-import {useRef, useState} from "react";
+import button_style from "../UI/Button.module.css"
+
 
 function CreateInvitationPage(){
 
@@ -39,7 +40,6 @@ function CreateInvitationPage(){
                     </div>
                     <button className={button_style['answer-button']} onClick={onCreateButtonClick}>Create</button>
                 </div>
-
                 :
                 <div>
                     <h2>Your url is</h2>
@@ -47,7 +47,6 @@ function CreateInvitationPage(){
                 </div>
             }
         </div>
-
     )
 }
 

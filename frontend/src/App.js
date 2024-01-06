@@ -1,8 +1,8 @@
-import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import InvitationPage from "./components/InvitationPage/InvitationPage";
 import CreateInvitationPage from "./components/CreateInvitationPage/CreateInvitationPage";
+import './App.css';
 
 function App() {
   return (

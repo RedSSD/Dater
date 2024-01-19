@@ -21,6 +21,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . $APP_HOME
 
-RUN chown -R forum:forum $APP_HOME
+RUN chown -R forum:di $APP_HOME
 
-USER forum
+USER di

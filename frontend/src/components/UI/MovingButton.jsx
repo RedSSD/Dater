@@ -8,6 +8,7 @@ function MovingButton() {
 
     const [position, setPosition] = useState({left:0, top:0});
     const [isHover, setIsHover] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
 
     const OnMouseOver = () => {
         setIsHover(true);
@@ -16,10 +17,16 @@ function MovingButton() {
         setPosition({left: x, top: y})
     }
 
+    const OnMouseClick = () => {
+        alert("This button is broken, please press another one")
+        setIsVisible(false)
+    }
+
     return (
-            <button
+            isVisible && <button
                 className={css["answer-button"]}
                 onMouseOver={OnMouseOver}
+                onClick={OnMouseClick}
                 style={isHover ?
                     { position: 'absolute', left: position.left, top: position.top } : null
                 }

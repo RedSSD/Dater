@@ -14,6 +14,8 @@ function InvitationPage() {
     const [gifLink, setGifLink] = useState(INVITATION_GIF_LINK);
     const [text, setText] = useState("Do you wanna go out with me?");
 
+    const [isYesButtonClicked, setIsYesButtonClicked] = useState(false);
+
     const OnYesButtonClick = () => {
         const token = window.location.pathname
         const url = process.env.REACT_APP_BASE_API_URL + `${token}`
@@ -23,6 +25,7 @@ function InvitationPage() {
             if(res.status === 200) {
                 setGifLink(RESULT_GIF_LINK);
                 setText(SUCCESS_TEXT);
+                setIsYesButtonClicked(true)
             }
         })
     }
@@ -37,13 +40,15 @@ function InvitationPage() {
                 src= {gifLink}
                 alt="Cute animated illustration"/>
             </div>
-            <div className={css['buttons-section']}>
-                <Button
-                    text={"Yes"}
-                    onClick={OnYesButtonClick}
-                />
-                <MovingButton>No</MovingButton>
-            </div>
+            {!isYesButtonClicked &&
+                <div className={css['buttons-section']}>
+                    <Button
+                        text={"Yes"}
+                        onClick={OnYesButtonClick}
+                    />
+                    <MovingButton>No</MovingButton>
+                </div>
+            }
         </div>
     )
 }

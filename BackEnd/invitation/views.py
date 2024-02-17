@@ -1,6 +1,7 @@
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.decorators import api_view
 
 from .models import Invitation
 from .serializers import InvitationSerializer
@@ -16,6 +17,16 @@ class InvitationRetrieveAPIView(generics.RetrieveAPIView):
         invitation = Invitation.objects.get(token=telegram_token)
 
         send_telegram_message(invitation.telegram_id, 'agreement')
+
+        return Response({}, status=status.HTTP_200_OK)
+
+    @staticmethod
+    @api_view(('GET',))
+    def disagreement(request, **kwargs):
+        telegram_token = kwargs.get('token')
+        invitation = Invitation.objects.get(token=telegram_token)
+
+        send_telegram_message(invitation.telegram_id, 'disagreement')
 
         return Response({}, status=status.HTTP_200_OK)
 

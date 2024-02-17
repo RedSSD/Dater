@@ -5,7 +5,8 @@ from .config import TELEGRAM_TOKEN
 TELEGRAM_API_URL = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/'
 MESSAGE_TEXTS = {
     'creation': "Your invitation link has been created successfully",
-    'agreement': "Someone agreed to go out with you"
+    'agreement': "Someone agreed to go out with you",
+    'disagreement': "Someone is trying to reject your invitation"
 }
 
 

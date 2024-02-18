@@ -46,4 +46,4 @@ class InvitationCreateAPIView(generics.CreateAPIView):
                 serializer.save()
                 return Response(serializer.data)
 
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_409_CONFLICT)

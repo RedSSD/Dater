@@ -17,10 +17,15 @@ function CreateInvitationPage(){
         axios.post(`${process.env.REACT_APP_BASE_API_URL}/create/`,
             {"telegram_id": telegram_id}).then(res => {
 
-            if(res.status === 200)
+            if(res.status === 200) {
                 setIsCreated(true);
                 const link = `${process.env.REACT_APP_PUBLIC_URL}` + `/${res.data["token"]}`
                 setInvitationLink(link)
+            }
+        }).catch((error) =>{
+            if(error.response.status === 409){
+                alert("Something went wrong. Try to check entered ID.")
+            }
         })
     }
 

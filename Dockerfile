@@ -1,19 +1,19 @@
 FROM python:3.10.l2
 
+RUN addgroup -S dater
+RUN adduser -S dater -G dater
+
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /di
-COPY requirements.txt /di/
+RUN mkdir /dater
+WORKDIR /dater
 
-RUN apt update && apt upgrade
-RUN pip install --upgrade pip
-COPY ./requirements.txt .
-RUN pip3 install -r requirements.txt
+COPY requirements.txt /dater/
 
-COPY . /di/
+RUN pip install --upgrade
+RUN pip install -r requirements.txt
 
+ADD . /dater/
 
-
-
-
+USER dater

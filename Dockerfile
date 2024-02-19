@@ -1,4 +1,4 @@
-FROM python:3.10.l2
+FROM python:3.10.12
 
 RUN addgroup -S dater
 RUN adduser -S dater -G dater

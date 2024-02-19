@@ -86,7 +86,7 @@ CORS_ALLOW_METHODS = [
     "POST",
 ]
 
-ROOT_URLCONF = 'BackEnd.urls'
+ROOT_URLCONF = 'dater.urls'
 
 TEMPLATES = [
     {
@@ -104,7 +104,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'BackEnd.wsgi.application'
+WSGI_APPLICATION = 'dater.wsgi.application'
 
 
 # Database

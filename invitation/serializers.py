@@ -7,4 +7,4 @@ class InvitationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Invitation
-        fields = ('telegram_id', 'token', 'expiration_date')
+        fields = ('telegram_id', 'token')

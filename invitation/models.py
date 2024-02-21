@@ -10,7 +10,7 @@ class Invitation(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
-    telegram_id = models.CharField(max_length=9, unique=True)
+    telegram_id = models.CharField(max_length=15, unique=True)
     token = models.CharField(max_length=64, unique=True, blank=True, null=True)
     expiration_date = models.DateField()
 

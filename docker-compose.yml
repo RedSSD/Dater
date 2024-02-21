@@ -5,7 +5,7 @@ services:
     build: .
     container_name: api-dev
     restart: on-failure
-    command: python manage.py runserver localhost:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/dater
     ports:
@@ -14,7 +14,7 @@ services:
       - db
 
   db:
-    image: mysql
+    image: mysql:latest
     env_file:
       - .env
     ports:

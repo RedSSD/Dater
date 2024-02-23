@@ -28,3 +28,11 @@ services:
     restart: always
     volumes:
       - ./db_dater:/var/lib/mysql
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    volumes:
+      - ./src:/frontend/src
+    ports:
+      - '3000:3000'

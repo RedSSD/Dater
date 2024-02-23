@@ -21,12 +21,14 @@ function InvitationPage() {
         const url = process.env.REACT_APP_BASE_API_URL + `${token}`
 
 
-        axios.get(url).then(res =>{
+        axios.get(url).then(res => {
             if(res.status === 200) {
                 setGifLink(RESULT_GIF_LINK);
                 setText(SUCCESS_TEXT);
                 setIsYesButtonClicked(true)
             }
+        }).catch((error) => {
+            alert("Something went wrong")
         })
     }
 

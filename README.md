@@ -8,7 +8,11 @@
 1. Start telegram bot [**@wannagooutbot**](https://t.me/wannagooutbot) to receive messages from it 💌
 
 2. Go to the main page and enter your Telegram ID. It allows you to get an answer from your sweetheart. You can get your ID from [**@IDBot**](https://t.me/username_to_id_bot) 📝
+    
+    ![link_creating_img](readme_files/link_creating_img.png)
 
 3. Copy created link and send it to your romantic interest 🌷
+    
+    ![link_img](readme_files/link_img.jpg)
 
 4. Wait for the answer ⏳

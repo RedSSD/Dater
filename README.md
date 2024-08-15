@@ -4,6 +4,8 @@
 
 ![invitation_img](readme_files/invitation_img.png)  
 
+https://github.com/mshestalyuk for u
+
 ## How to use
 1. Start telegram bot [**@wannagooutbot**](https://t.me/wannagooutbot) to receive messages from it 💌
 
